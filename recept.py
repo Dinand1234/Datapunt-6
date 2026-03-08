@@ -20,6 +20,9 @@ class Recept:
     
     def get_stappen(self):
         return self.__stappen
+    
+    def get_ingredient_list(self):
+        return self.__ingredient_list
 
     def get_aantal_personen(self):
         return self.__aantal_personen
