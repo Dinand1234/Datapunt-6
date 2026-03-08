@@ -24,6 +24,43 @@ def kies_recept(recepten):
 
         print("Dit receptnummer bestaat niet.")
 
+def vraag_aantal_personen():
+    while True:
+        aantal = input("Voor hoeveel personen is het recept? ")
+
+        if aantal.isdigit() and int(aantal) > 0:
+            return int(aantal)
+
+        print("Foutieve invoer.")
+
+
+def vraag_plantaardig():
+    while True:
+        keuze = input("Wil je de plantaardige versie indien mogelijk? (ja/nee) ").lower()
+
+        if keuze == "ja":
+            return True
+        if keuze == "nee":
+            return False
+
+        print("Foutieve invoer.")
+
+
+def toon_recept(recept, plantaardig):
+    print(f"\n{recept.get_naam()}")
+    print(recept.get_omschrijving())
+    print(f"Aantal personen: {recept.get_aantal_personen()}\n")
+
+    print("Ingrediënten:")
+    for ingredient in recept.get_ingredienten(plantaardig):
+        print(f"- {ingredient}")
+
+    print("\nBereidingsstappen:")
+    for i, stap in enumerate(recept.get_stappen(), start=1):
+        print(f"{i}. {stap}")
+
+    print(f"\nTotaal kcal: {recept.bereken_totaal_kcal(plantaardig)}")
+
 def main():
     recepten = []
 
