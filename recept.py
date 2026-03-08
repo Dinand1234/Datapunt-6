@@ -4,6 +4,7 @@ class Recept:
         self.__omschrijving = omschrijving
         self.__ingredient_list = []
         self.__stappen = []
+        self.__aantal_personen = 1
 
     def voeg_ingredient_toe(self, ingredient):
         self.__ingredient_list.append(ingredient)
@@ -16,23 +17,32 @@ class Recept:
 
     def get_omschrijving(self):
         return self.__omschrijving
-
-    def get_ingredienten(self):
-        return self.__ingredient_list
-
+    
     def get_stappen(self):
         return self.__stappen
 
-    def __str__(self):
-        tekst = f"{self.__naam}\n"
-        tekst += f"{self.__omschrijving}\n\n"
+    def get_aantal_personen(self):
+        return self.__aantal_personen
 
-        tekst += "Ingrediënten:\n"
+    def set_aantal_personen(self, aantal_personen):
+        self.__aantal_personen = aantal_personen
         for ingredient in self.__ingredient_list:
-            tekst += f"- {ingredient}\n"
+            ingredient.set_hoeveelheid(aantal_personen)
 
-        tekst += "\nBereidingsstappen:\n"
-        for i, stap in enumerate(self.__stappen, start=1):
-            tekst += f"{i}. {stap}\n"
+    def get_ingredienten(self, plantaardig=False):
+        ingredienten = []
 
-        return tekst
+        for ingredient in self.__ingredient_list:
+            gekozen_ingredient = ingredient.get_ingredient(plantaardig)
+            gekozen_ingredient.set_hoeveelheid(self.__aantal_personen)
+            ingredienten.append(gekozen_ingredient)
+
+        return ingredienten
+
+    def bereken_totaal_kcal(self, plantaardig=False):
+        totaal = 0
+
+        for ingredient in self.get_ingredienten(plantaardig):
+            totaal += ingredient.get_kcal() * self.__aantal_personen
+
+        return totaal
