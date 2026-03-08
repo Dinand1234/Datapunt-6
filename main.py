@@ -268,7 +268,7 @@ def maak_standaard_recepten():
     recept1.voeg_stap_toe(Stap("Voeg de kookroom toe en laat het geheel zachtjes pruttelen.", "Laat de saus niet te hard koken."))
     recept1.voeg_stap_toe(Stap("Serveer met de rijst en sperziebonen."))
     recepten.append(recept1)
-    
+
     recept2 = Recept("Gehakt quiche met paprika", "Een heerlijke quiche met gehakt en paprika.")
     recept2.voeg_ingredient_toe(Ingredient("bladerdeeg", 3, "plakken", 240))
     recept2.voeg_ingredient_toe(Ingredient("rundergehakt", 125, "gram", 313, Ingredient("vegan gehakt", 125, "gram", 250)))
@@ -281,7 +281,7 @@ def maak_standaard_recepten():
 
     recept2.voeg_stap_toe(Stap("Verwarm de oven voor op 200 graden."))
     recept2.voeg_stap_toe(Stap("Bekleed een kleine ovenschaal of quichevorm met het bladerdeeg."))
-    recept2.voeg_stap_toe(Stap("Snipper de ui en snijd de paprika in blokjes."))
+    recept2.voeg_stap_toe(Stap("Snipper d1e ui en snijd de paprika in blokjes."))
     recept2.voeg_stap_toe(Stap("Bak het gehakt rul in een pan met olie.", "Gebruik een houten lepel om het gehakt los te maken."))
     recept2.voeg_stap_toe(Stap("Voeg de ui en paprika toe en bak kort mee."))
     recept2.voeg_stap_toe(Stap("Klop het ei los met de kookroom."))
