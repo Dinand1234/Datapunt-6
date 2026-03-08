@@ -46,3 +46,18 @@ class Recept:
             totaal += ingredient.get_kcal() * self.__aantal_personen
 
         return totaal
+    
+    def __str__(self):
+        tekst = f"{self.__naam}\n"
+        tekst += f"{self.__omschrijving}\n"
+        tekst += f"Aantal personen: {self.__aantal_personen}\n\n"
+
+        tekst += "Ingrediënten:\n"
+        for ingredient in self.get_ingredienten():
+            tekst += f"- {ingredient}\n"
+
+        tekst += "\nBereidingsstappen:\n"
+        for i, stap in enumerate(self.__stappen, start=1):
+            tekst += f"{i}. {stap}\n"
+
+        return tekst
