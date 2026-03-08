@@ -120,11 +120,14 @@ def main():
     recepten.append(recept3)
 
     toon_recepten_overzicht(recepten)
-    gekozen_recept = kies_recept(recepten)
+gekozen_recept = kies_recept(recepten)
 
-    print("\n=== Gekozen recept ===")
-    print(gekozen_recept)
+aantal_personen = vraag_aantal_personen()
+gekozen_recept.set_aantal_personen(aantal_personen)
 
+plantaardig = vraag_plantaardig()
+
+toon_recept(gekozen_recept, plantaardig)
 
 if __name__ == "__main__":
     main()
