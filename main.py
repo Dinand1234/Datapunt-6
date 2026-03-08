@@ -23,3 +23,71 @@ def kies_recept(recepten):
             return recepten[keuze - 1]
 
         print("Dit receptnummer bestaat niet.")
+
+def main():
+    recepten = []
+
+    recept1 = Recept("Kip Kerrie", "Kip kerrie zonder pakjes en zakjes")
+    recept1.voeg_ingredient_toe(Ingredient("kipfilet", 150, "gram"))
+    recept1.voeg_ingredient_toe(Ingredient("rijst", 75, "gram"))
+    recept1.voeg_ingredient_toe(Ingredient("sperziebonen", 100, "gram"))
+    recept1.voeg_ingredient_toe(Ingredient("ui", 0.5, "stuk"))
+    recept1.voeg_ingredient_toe(Ingredient("knoflook", 1, "teen"))
+    recept1.voeg_ingredient_toe(Ingredient("kerriepoeder", 1, "theelepel"))
+    recept1.voeg_ingredient_toe(Ingredient("kookroom", 75, "ml"))
+    recept1.voeg_ingredient_toe(Ingredient("olie", 1, "eetlepel"))
+
+    recept1.voeg_stap_toe(Stap("Kook de rijst volgens de aanwijzingen op de verpakking."))
+    recept1.voeg_stap_toe(Stap("Kook de sperziebonen beetgaar in een pan met water."))
+    recept1.voeg_stap_toe(Stap("Snijd de kipfilet in blokjes en snipper de ui en knoflook fijn."))
+    recept1.voeg_stap_toe(Stap("Verhit de olie in een pan en bak de kip rondom gaar."))
+    recept1.voeg_stap_toe(Stap("Voeg de ui, knoflook en kerriepoeder toe en bak kort mee."))
+    recept1.voeg_stap_toe(Stap("Voeg de kookroom toe en laat het geheel even zachtjes pruttelen."))
+    recept1.voeg_stap_toe(Stap("Serveer met de rijst en sperziebonen."))
+
+    recepten.append(recept1)
+
+    recept2 = Recept("Gehakt quiche met paprika", "Een heerlijke quiche met gehakt en paprika.")
+    recept2.voeg_ingredient_toe(Ingredient("bladerdeeg", 3, "plakken"))
+    recept2.voeg_ingredient_toe(Ingredient("rundergehakt", 125, "gram"))
+    recept2.voeg_ingredient_toe(Ingredient("paprika", 0.5, "stuk"))
+    recept2.voeg_ingredient_toe(Ingredient("ui", 0.5, "stuk"))
+    recept2.voeg_ingredient_toe(Ingredient("ei", 1, "stuk"))
+    recept2.voeg_ingredient_toe(Ingredient("kookroom", 50, "ml"))
+    recept2.voeg_ingredient_toe(Ingredient("geraspte kaas", 30, "gram"))
+    recept2.voeg_ingredient_toe(Ingredient("olie", 1, "eetlepel"))
+
+    recept2.voeg_stap_toe(Stap("Verwarm de oven voor op 200 graden."))
+    recept2.voeg_stap_toe(Stap("Bekleed een kleine ovenschaal of quichevorm met het bladerdeeg."))
+    recept2.voeg_stap_toe(Stap("Snipper de ui en snijd de paprika in blokjes."))
+    recept2.voeg_stap_toe(Stap("Bak het gehakt rul in een pan met olie."))
+    recept2.voeg_stap_toe(Stap("Voeg de ui en paprika toe en bak kort mee."))
+    recept2.voeg_stap_toe(Stap("Klop het ei los met de kookroom."))
+    recept2.voeg_stap_toe(Stap("Verdeel het gehaktmengsel over de bodem en schenk het eimengsel eroverheen."))
+    recept2.voeg_stap_toe(Stap("Bestrooi met geraspte kaas en bak de quiche in ongeveer 25 minuten goudbruin."))
+
+    recepten.append(recept2)
+
+    recept3 = Recept("Yoghurt ontbijt met banaan en havermout", "Een snel en gezond ontbijt voor 1 persoon.")
+    recept3.voeg_ingredient_toe(Ingredient("yoghurt", 200, "ml"))
+    recept3.voeg_ingredient_toe(Ingredient("havermout", 40, "gram"))
+    recept3.voeg_ingredient_toe(Ingredient("banaan", 1, "stuk"))
+    recept3.voeg_ingredient_toe(Ingredient("honing", 1, "theelepel"))
+    recept3.voeg_ingredient_toe(Ingredient("kaneel", 1, "snufje"))
+
+    recept3.voeg_stap_toe(Stap("Doe de yoghurt in een kom."))
+    recept3.voeg_stap_toe(Stap("Roer de havermout door de yoghurt."))
+    recept3.voeg_stap_toe(Stap("Snijd de banaan in plakjes en voeg deze toe."))
+    recept3.voeg_stap_toe(Stap("Maak het af met honing en een snufje kaneel."))
+
+    recepten.append(recept3)
+
+    toon_recepten_overzicht(recepten)
+    gekozen_recept = kies_recept(recepten)
+
+    print("\n=== Gekozen recept ===")
+    print(gekozen_recept)
+
+
+if __name__ == "__main__":
+    main()
